@@ -1,0 +1,13 @@
+<launch>
+    <!-- Launching first tracker-->
+    <node pkg="DevDog" type="openni_tracker_modified1" name="tracker_1" args="1" output="screen"/>
+
+    <!-- Launching fixed frame broadcaster-->
+    <!--node pkg="DevDog" type="fixed_tf_broadcaster.py" name="broadcaster_fixed" /-->
+    
+    <!-- Launching movement tracker -->
+    <node pkg="DevDog" type="movement_tracker.py" name="movement_tracker" output="screen"/>
+        
+    <!-- give transforms as x y z yaw pitch roll frame_id child_frame_id period_in_ms-->
+    <!-- node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.25 0.0 0.0 0 0 0 origin kinect1_depth_frame 100" /-->    
+</launch>
